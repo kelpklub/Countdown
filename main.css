@@ -1,0 +1,62 @@
+        .background {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .countdown {
+            font-family: "Black Ops One", system-ui;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .mission {
+            font-family: "Audiowide", system-ui;
+        }
+        
+        #days {
+            margin: 20px;
+        }
+        
+        #dh {
+            font-size: 6vh;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        #mdh {
+            font-size: 10vh;
+            display: flex;
+            flex-direction: column;
+            row-gap: 2px;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #smdh {
+            font-size: 28vh;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+        
+        .mission {
+            font-size: 6vh;
+            text-align: center;
+        }
+        
+        html,
+        body,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            overflow: hidden;
+        }
