@@ -17,6 +17,10 @@
             font-family: "Audiowide", system-ui;
         }
         
+        #details {
+            white-space: pre-line;
+        }
+        
         #days {
             margin: 20px;
         }
