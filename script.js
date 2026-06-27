@@ -1,4 +1,4 @@
-const background = document.getElementById("background");
+const picture = document.getElementById("picture");
 const details = document.getElementById("details");
 const days = document.getElementById("days");
 const hours = document.getElementById("hours");
@@ -18,7 +18,7 @@ async function getNextLaunch() {
 
         );
         const data = await response.json();
-        console.log(data);
+        console.log(response.status);
 
         launches = data.results;
         currentLaunch = 0;
@@ -33,7 +33,7 @@ async function getNextLaunch() {
 
 function setLaunch(i) {
     const launch = launches[i];
-
+    picture.style.backgroundImage = `url("${launch.image.image_url}")`;
     Countdown = new Date(launch.net);
     details.textContent = `${launch.name}\nby${launch.launch_service_provider.name}`;
 
