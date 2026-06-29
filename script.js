@@ -4,10 +4,17 @@ const days = document.getElementById("days");
 const hours = document.getElementById("hours");
 const minutes = document.getElementById("minutes");
 const seconds = document.getElementById("seconds");
+const flag = document.getElementById("countryflag");
+const logo = document.getElementById("agencylogo");
+flag.width = 160;
+flag.border = 1;
+logo.width = 160;
+logo.border = 1;
 
 let Countdown;
 let launches = [];
 let currentLaunch = 0;
+let Countrycode = "";
 
 console.log("bfr fetch");
 
@@ -35,8 +42,11 @@ function setLaunch(i) {
     const launch = launches[i];
     picture.style.backgroundImage = `url("${launch.image.image_url}")`;
     Countdown = new Date(launch.net);
-    details.textContent = `${launch.name}\nby${launch.launch_service_provider.name}`;
-
+    Countrycode = launch.pad.country.alpha_2_code;
+    flag.src = `https://flagcdn.com/w160/${Countrycode.toLowerCase()}.png`;
+    flag.alt = `Flag Of ${launch.pad.country.name}`;
+    console.log("Countrycode", Countrycode);
+    details.textContent = `${launch.name}\nby ${launch.launch_service_provider.name}`;
 }
 
 function updateCountdown() {
