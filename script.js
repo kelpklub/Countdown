@@ -12,10 +12,13 @@ const logo = document.getElementById("agencylogo");
 const canvas = document.getElementById("stars");
 const ctx = canvas.getContext("2d");
 
+const fbtn = document.getElementById("fullscreen");
+const fpath = document.getElementById("fullscreen_path");
+
 const config = {
-    starnum: 300,
+    starnum: 600,
     speedmin: 0.05,
-    speedmax: 0.2,
+    speedmax: 0.5,
     radiusmin: 0.3,
     radiusmax: 1.5,
     alphamin: 0.3,
@@ -76,7 +79,11 @@ function setLaunch(i) {
     const launch = launches[i];
     picture.style.backgroundImage = `url("${launch.image.image_url}")`;
     Countdown = new Date(launch.net);
-    Countrycode = launch.pad.country.alpha_2_code;
+    if (launch.mission.agencies[0].country[0].alpha_2_code) {
+        Countrycode = launch.mission.agencies[0].country[0].alpha_2_code;
+    } else {
+        Countrycode = launch.pad.country.alpha_2_code;
+    }
     flag.src = `https://flagcdn.com/w160/${Countrycode.toLowerCase()}.png`;
     flag.alt = `Flag Of ${launch.pad.country.name}`;
     console.log("Countrycode", Countrycode);
@@ -114,9 +121,9 @@ function updateCountdown() {
     console.log("s", s);
 
     days.textContent = `${d}D`;
-    hours.textContent = `${h}h`;
-    minutes.textContent = `${m}m`;
-    seconds.textContent = `${s}s`;
+    hours.textContent = h < 10 ? `0${h}h` : `${h}h`;
+    minutes.textContent = m < 10 ? `0${m}m` : `${m}m`;
+    seconds.textContent = s < 10 ? `0${s}s` : `${s}s`;
 }
 
 function initstars() {
@@ -154,6 +161,26 @@ function animatestars() {
     requestAnimationFrame(animatestars);
 
 }
+//fullscreen 
+const expand = "M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707m4.344-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707";
+const contract = "M.172 15.828a.5.5 0 0 0 .707 0l4.096-4.096V14.5a.5.5 0 1 0 1 0v-3.975a.5.5 0 0 0-.5-.5H1.5a.5.5 0 0 0 0 1h2.768L.172 15.121a.5.5 0 0 0 0 .707M15.828.172a.5.5 0 0 0-.707 0l-4.096 4.096V1.5a.5.5 0 1 0-1 0v3.975a.5.5 0 0 0 .5.5H14.5a.5.5 0 0 0 0-1h-2.768L15.828.879a.5.5 0 0 0 0-.707";
+
+fbtn.addEventListener(
+    "click", (e) => {
+        e.preventDefault();
+        if (!document.fullscreenElement) {
+            document.documentElement.requestFullscreen();
+        } else {
+            document.exitFullscreen();
+        }
+    }
+);
+document.addEventListener(
+    "fullscreenchange", () => {
+        fpath.setAttribute(
+            "d", document.fullscreenElement ? contract : expand)
+    }
+);
 async function init() {
     initstars();
     await getNextLaunch();

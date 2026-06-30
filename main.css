@@ -70,7 +70,7 @@ p {
 body {
     overflow: hidden;
     color: rgba(174, 194, 255, 0.76);
-    background: radial-gradient(circle at center, rgba(30, 40, 70, 0.8) 0%, rgba(10, 15, 30, 1) 70%), radial-gradient(white 1px, transparent 1px);
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.8) 0%, rgba(10, 15, 30, 1) 70%), radial-gradient(rgb(6, 2, 27) 1px, transparent 1px);
 }
 
 #stars {
@@ -81,4 +81,37 @@ body {
     height: 100vh;
     z-index: -1;
     pointer-events: none;
+}
+
+#Github {
+    position: fixed;
+    top: 20px;
+    right: 100px;
+    color: white;
+}
+
+#Github:hover {
+    transform: scale(1.1);
+}
+
+#fullscreen {
+    position: fixed;
+    top: 25px;
+    right: 20px;
+    color: white;
+}
+
+#fullscreen:hover {
+    transform: scale(1.1);
+}
+
+#info {
+    position: fixed;
+    top: 20px;
+    right: 180px;
+    color: white;
+}
+
+#info:hover {
+    transform: scale(1.1);
 }
