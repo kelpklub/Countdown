@@ -1,72 +1,84 @@
-        #background {
-            width: 100vw;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .countdown {
-            font-family: "Black Ops One", system-ui;
-            display: flex;
-            flex-direction: row;
-            font-variant-numeric: tabular-nums;
-        }
-        
-        .mission {
-            font-family: "Audiowide", system-ui;
-        }
-        
-        #details {
-            white-space: pre-line;
-        }
-        
-        #days,
-        #hours,
-        #minutes,
-        #seconds {
-            margin: 10px;
-            width: 3ch;
-            text-align: center;
-        }
-        
-        #dh {
-            font-size: 6vh;
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 4px;
-        }
-        
-        #mdh {
-            font-size: 10vh;
-            display: flex;
-            flex-direction: column;
-            row-gap: 2px;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        #smdh {
-            font-size: 28vh;
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-        }
-        
-        .mission {
-            font-size: 6vh;
-            text-align: center;
-        }
-        
-        html,
-        body,
-        p {
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            overflow: hidden;
-        }
+#background {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.countdown {
+    font-family: "Black Ops One", system-ui;
+    display: flex;
+    flex-direction: row;
+    font-variant-numeric: tabular-nums;
+}
+
+.mission {
+    font-family: "Audiowide", system-ui;
+}
+
+#details {
+    white-space: pre-line;
+}
+
+#days,
+#hours,
+#minutes,
+#seconds {
+    margin: 10px;
+    width: 3ch;
+    text-align: center;
+}
+
+#dh {
+    font-size: 6vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 4px;
+}
+
+#mdh {
+    font-size: 10vh;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2px;
+    justify-content: center;
+    align-items: center;
+}
+
+#smdh {
+    font-size: 28vh;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.mission {
+    font-size: 6vh;
+    text-align: center;
+}
+
+html,
+body,
+p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    overflow: hidden;
+    color: rgba(174, 194, 255, 0.76);
+    background: radial-gradient(circle at center, rgba(30, 40, 70, 0.8) 0%, rgba(10, 15, 30, 1) 70%), radial-gradient(white 1px, transparent 1px);
+}
+
+#stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+    pointer-events: none;
+}
