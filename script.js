@@ -124,10 +124,10 @@ function initstars() {
         stars.push({
             x: Math.random() * width,
             y: Math.random() * height,
-            radius: 2,
-            alpha: 1,
-            vx: Math.random() * 2,
-            vy: Math.random() * 2
+            radius: Math.random() * (config.radiusmax - config.radiusmin) + config.radiusmin,
+            alpha: Math.random() * (config.alphamax - config.alphamin) + config.alphamin,
+            vx: Math.random() * (config.speedmax - config.speedmin) + config.speedmin,
+            vy: Math.random() * (config.speedmax - config.speedmin) + config.speedmin
         });
     }
 }
@@ -144,6 +144,11 @@ function animatestars() {
 
         star.x += star.vx;
         star.y += star.vy;
+
+        if (star.x < 0) star.x = width;
+        if (star.x > width) star.x = 0;
+        if (star.y < 0) star.y = height;
+        if (star.y > height) star.y = 0;
 
     }
     requestAnimationFrame(animatestars);
