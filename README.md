@@ -13,7 +13,7 @@ A [Countdown website](https://kelpklub.github.io/Countdown/) that displays upcom
 - HTML5 Canvas
 - Launch Library 2 API
 # API  
-https://ll.thespacedevs.com/2.3.0/launches/upcoming/
+https://ll.thespacedevs.com/2.3.0/launches/upcoming/  
 https://flagcdn.com/  
 # Credit  
 Launch data provided by The Space Devs Launch Library 2 API.  
