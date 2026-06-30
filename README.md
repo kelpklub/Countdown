@@ -15,7 +15,10 @@ A [Countdown website](https://kelpklub.github.io/Countdown/) that displays upcom
 # API  
 https://ll.thespacedevs.com/2.3.0/launches/upcoming/  
 https://flagcdn.com/  
+# AI Declaration  
+AI was used **ONLY** for Debugging bugs which i couldn't find myself.   
 # Credit  
 Launch data provided by The Space Devs Launch Library 2 API.  
 Country flags provided by FlagCDN.  
 Favicon icon created by Pixel Buddha from Flaticon.  
+The star pattern was made with the help of [ImadSaddik's star field](https://github.com/ImadSaddik/StarFieldEffect/tree/main).
