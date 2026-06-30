@@ -79,10 +79,16 @@ function setLaunch(i) {
     const launch = launches[i];
     picture.style.backgroundImage = `url("${launch.image.image_url}")`;
     Countdown = new Date(launch.net);
-    if (launch.mission.agencies[0].country[0].alpha_2_code) {
-        Countrycode = launch.mission.agencies[0].country[0].alpha_2_code;
-    } else {
-        Countrycode = launch.pad.country.alpha_2_code;
+   Countrycode = launch.pad.country.alpha_2_code;
+    if (
+        launch.mission &&
+        launch.mission.agencies &&
+        launch.mission.agencies.length > 0 &&
+        launch.mission.agencies[0].country &&
+        launch.mission.agencies[0].country.length > 0
+    ) {
+        Countrycode =
+            launch.mission.agencies[0].country[0].alpha_2_code;
     }
     flag.src = `https://flagcdn.com/w160/${Countrycode.toLowerCase()}.png`;
     flag.alt = `Flag Of ${launch.pad.country.name}`;
